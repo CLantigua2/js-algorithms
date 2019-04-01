@@ -1,3 +1,4 @@
+// this tree can only represent a left and a right
 class BinaryTree {
     constructor(value) {
         this.value = value
@@ -27,7 +28,7 @@ recursivePrint = (node, cb) => {
     if (node.left) recursivePrint(node.left, cb)
     if (node.right) recursivePrint(node.right, cb)
 }
-
+console.time('timer')
 const root = new BinaryTree(1)
 
 root.insertLeft(4)
@@ -39,3 +40,4 @@ root.right.insertRight(6)
 root.left.left.insertLeft(3)
 
 console.log(recursivePrint(root, print))
+console.timeEnd('timer')
